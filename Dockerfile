@@ -10,7 +10,7 @@ LABEL MAINTAINER="Sooraj Gairola"
 RUN apt-get -y update 
 RUN apt-get install -y nginx=1.14.*
 
-
+#remove existing config
 RUN rm -f /etc/nginx/nginx.config
 
 RUN mkdir -p /var/www/demo
