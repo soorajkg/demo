@@ -1,0 +1,19 @@
+schemaVersion: '2.0.0'
+metadataTest:
+  labels:
+  - key: 'MAINTAINER'
+    value: 'Sooraj Gairola'
+  exposedPorts: ['80']
+  cmd: ['/usr/sbin/nginx', "-g", "daemon off;"]
+
+fileExistenceTests:
+  # NginxConfig  exists
+  - name: nginxconfig
+    path: /etc/nginx/nginx.conf
+    shouldExist: true
+
+commandTests:
+  - name: nginxversioncheck
+    command: "apt"
+    args: ["-y", "install", "nginx=1.14.*"]
+    expectedOutput: ["1.14.*"]
