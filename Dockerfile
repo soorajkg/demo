@@ -13,6 +13,7 @@ RUN apt-get install -y nginx=1.14.*
 #remove existing config
 RUN rm -f /etc/nginx/nginx.config
 
+#create directory
 RUN mkdir -p /var/www/demo
 #Lets copy the local index.html to /tmp
 COPY /src/index.html /var/www/demo/index.html
