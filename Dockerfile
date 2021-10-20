@@ -8,6 +8,7 @@ LABEL MAINTAINER="Sooraj Gairola"
 
 # install system update and install  NGINX
 RUN apt-get -y update 
+
 RUN apt-get install -y nginx=1.14.*
 
 #remove existing config
